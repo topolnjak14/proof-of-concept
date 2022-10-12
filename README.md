@@ -1,4 +1,4 @@
-# Sinapsis Technical PoC
+# Sinapsis Technical Code Challenge
 
 ## Intro:
 
@@ -6,7 +6,7 @@ Inside each folder you'll find a README file containing the instructions for the
 Each mission is structured as follows:
   - There is a goal (AKA: *what* you're building)
   - There are a set of requirements (AKA: constraints on *how* you build it)
-  - There are a set grading guidelines. This is how we'll evaluate the PoC
+  - There are a set grading guidelines. This is how we'll evaluate the Code Challenge
 
 ## Instructions:
 
@@ -20,4 +20,3 @@ Each mission is structured as follows:
 We'll contact you after reviewing your submission. Be ready for a show and tell describing your solution.
 
 # **Have Fun! :-)**
-
