@@ -23,6 +23,7 @@ Build a simple API that generates thumbnails from a source image
 - The code should be clear and easy to read / debug
 
 ### Nice moves (5 points each)
+- It includes an **Architecture Diagram** to present your solution
 - It includes **Swagger** or **Postman** documentation 
 - It includes configuration files / scripts for deploying it on **AWS**
 - It's serverless! (either **AWS Lambda + API Gateway** + **Dynamodb**)
