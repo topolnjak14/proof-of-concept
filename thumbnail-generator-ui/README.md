@@ -25,6 +25,7 @@ Build a simple UI/UX for a thumbnail generator.
 - Includes a simple login (recommended: AWS Cognito or Auth0)
 
 ### Nice moves (5 points each)
+- It uses Styled Components for the styling of the components instead of using css or scss. Including the general css such as resets, font-family, etc in the index.css.
 - It includes drag-and-drop functionality + visual cues to help the user
 - It's Dockerized for local development / testing
 - It includes some kind of testing (unit tests, integration tests, etc) with at least 70% coverage
