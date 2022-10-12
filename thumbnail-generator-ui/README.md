@@ -11,7 +11,7 @@ Build a simple UI/UX for a thumbnail generator.
 
 ## Grading Guidelines
 
-### MVP (40 points)
+### MVP (50 points)
 - Every requirement is met
 - The solution runs on our enviroment
 - Tech Stack: **React v18** (or highest) using **Typescript**
@@ -20,15 +20,15 @@ Build a simple UI/UX for a thumbnail generator.
 - Everything should work after following a simple README (ideally: npm install; npm start)
 - The code should be clear and easy to read / debug
 - It's responsive and works well with desktops, phones and tablets
+- It includes transitions, loaders, progress status
+- It uses Redux extensively (https://redux-observable.js.org/)
+- Includes a simple login (recommended: AWS Cognito or Auth0)
 
 ### Nice moves (5 points each)
-- It includes transitions, loaders, progress status
 - It includes drag-and-drop functionality + visual cues to help the user
 - It's Dockerized for local development / testing
 - It includes some kind of testing (unit tests, integration tests, etc) with at least 70% coverage
-- Includes a simple login (recommended: AWS Cognito or Auth0)
 
 ### Wait, WHAT?! (10 points each)
-- It uses Redux extensively (https://redux-observable.js.org/)
 - It works also with the device camera
 - It include a croping area / resize helper
