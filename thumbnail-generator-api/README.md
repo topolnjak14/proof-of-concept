@@ -14,8 +14,11 @@ Build a simple API that generates thumbnails from a source image
 
 ## Grading Guidelines
 
-### MVP (40 points)
+### MVP (60 points)
 - Every requirement is met
+- The **Architecture Diagram** to present your solution
+- The solution must be 100% serverless! (e.g.: **API Gateway** + **AWS Lambda** + **Dynamodb**)
+- It includes configuration files / scripts for deploying it on **AWS**
 - The solution runs on our enviroment
 - Tech Stack: **Node.js v16** (or highest) using **Typescript**
 - Any ENV specific value should be configurable and documented
@@ -23,17 +26,13 @@ Build a simple API that generates thumbnails from a source image
 - The code should be clear and easy to read / debug
 
 ### Nice moves (5 points each)
-- It includes an **Architecture Diagram** to present your solution
 - It includes **Swagger** or **Postman** documentation 
-- It includes configuration files / scripts for deploying it on **AWS**
-- It's serverless! (either **AWS Lambda + API Gateway** + **Dynamodb**)
 - It relies on **CDK v2** or **Serverless Framework** (Infrastructure as Code)
-- It's Dockerized for local development / testing
-- It leverages cloud services (ie: AWS Cognito, Lambda, API Gateway, EventBridge, S3, SNS, SQS, etc...)
+- It leverages cloud services (ie: AWS Cognito, API Gateway, Lambda DynamoDB, EventBridge, S3, SNS, SQS, etc...)
 - It's asynchronic
 - It's fast (<~500ms after upload finishes)
 - It includes some kind of testing (unit tests, integration tests, etc) with at least 70% coverage
-- It has an auth implementation (recommended: AWS Cognito or Auth0)
+- It has an auth implementation using AWS Cognito
 
 ### Wait, WHAT?! (10 points each)
 - It includes a configuration file / script to setup a CI/CD process on AWS
