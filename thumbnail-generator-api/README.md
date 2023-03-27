@@ -20,7 +20,7 @@ Build a simple API that generates thumbnails from a source image
 - The solution must be 100% serverless! (e.g.: **API Gateway** + **AWS Lambda** + **Dynamodb**)
 - It includes configuration files / scripts for deploying it on **AWS**
 - The solution runs on our enviroment
-- Tech Stack: **Node.js v16** (or highest) using **Typescript**
+- Tech Stack: **Node.js v18** (or highest) using **Typescript**
 - Any ENV specific value should be configurable and documented
 - Everything should work after following a simple README
 - The code should be clear and easy to read / debug
@@ -28,11 +28,11 @@ Build a simple API that generates thumbnails from a source image
 ### Nice moves (5 points each)
 - It includes **Swagger** or **Postman** documentation 
 - It relies on **CDK v2** or **Serverless Framework** (Infrastructure as Code)
-- It leverages cloud services (ie: AWS Cognito, API Gateway, Lambda DynamoDB, EventBridge, S3, SNS, SQS, etc...)
+- It leverages AWS Serverless Services like AWS Cognito, API Gateway, Lambda DynamoDB, EventBridge, S3, SNS, SQS, etc.
 - It's asynchronic
 - It's fast (<~500ms after upload finishes)
 - It includes some kind of testing (unit tests, integration tests, etc) with at least 70% coverage
-- It has an auth implementation using AWS Cognito
+- It has an auth implementation using **AWS Cognito**
 
 ### Wait, WHAT?! (10 points each)
 - It includes a configuration file / script to setup a CI/CD process on AWS
