@@ -1,0 +1,15 @@
+.dropzone {
+    width: 300px;
+    height: 200px;
+    border: 2px dashed gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
