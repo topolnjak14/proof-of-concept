@@ -68,8 +68,8 @@ const HeroImage: React.FC<CardProps> = ({ title, subtitle, buttonText }) => {
     <CardContainer>
       <Content>
         <CardTitle>{title}</CardTitle>
-        <CardSubtitle>{subtitle}</CardSubtitle>
-        <CardButton>{buttonText}</CardButton>
+        <CardSubtitle style= {{color: "#e8ac52", fontWeight:"bold"}}>{subtitle}</CardSubtitle>
+        {/* <CardButton >{buttonText}</CardButton> */}
       </Content>
     </CardContainer>
   );

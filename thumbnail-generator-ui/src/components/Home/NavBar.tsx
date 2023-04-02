@@ -23,6 +23,10 @@ const Logo = styled.a`
   text-decoration: none;
   color: #fff;
   border-bottom: 1px solid #bb6b04;
+
+  &&:hover {
+    color: #bb6b04;
+  }
 `;
 
 const NavMenu = styled.ul`
@@ -30,20 +34,12 @@ const NavMenu = styled.ul`
   list-style: none;
 `;
 
-const NavMenuItem = styled.li`
-  margin: 0 10px;
-`;
 
-const NavMenuLink = styled.a`
-  text-decoration: none;
-  color: #fff;
-  
-`;
 
 const Navbar = () => {
     const { isAuthenticated, isLoading } = useAuth0();
 
-    if(isLoading) return <CircularProgress/>
+    if(isLoading) return <CircularProgress/> 
 
   return (
     <Nav>

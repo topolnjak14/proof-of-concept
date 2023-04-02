@@ -3,8 +3,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 3em;
-  height: 2em;
+  width: 6em;
+  height: 4em;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -12,11 +12,13 @@ const Container = styled.div`
 `;
 
 const Img = styled.img`
+  width: 100%
+  height: auto;
   border-radius: 5px;
 `;
 
 const H2 = styled.h2`
-  font-size: 0.5em;
+  font-size: 0.7em;
   text-align: center;
   margin-left:5px;
 `;

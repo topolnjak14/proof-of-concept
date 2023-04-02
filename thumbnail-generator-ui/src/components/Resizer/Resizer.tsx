@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDropzone } from "react-dropzone";
+import { useDropzone, Accept } from "react-dropzone";
 import "../Resizer/drop.css";
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -10,7 +10,7 @@ import HeroImage from "../Home/HeroImage";
 
 const Container = styled.div`
   width: 60%;
-  height: auto;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,19 +20,22 @@ const Container = styled.div`
   color: white;
   padding-top: 20px;
   
+ 
+  @media (max-width: 1400px) {
+    width: 90%; 
+  }
   
   `;
 
 const DragContainer = styled.div`
-  width: 80%;
-  height: 50vh;
+  width: 60%;
+  height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, #FF8C00, #FFA500);
   border-radius: 5px;
   color: #3b3731;
-  border: 2px solid gray;
+  border: 1px solid gray;
   font-size: 1.5em;
   font-weight: bold;
   text-align: center;
@@ -64,6 +67,7 @@ function Resizer(): JSX.Element {
   const [height, setHeight] = useState <number>(200);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  
 
 
 
@@ -78,12 +82,12 @@ function Resizer(): JSX.Element {
 
    const handleWidthChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const newWidth = parseInt(e.target.value);
-    setWidth(newWidth);
+      setWidth(newWidth);
   };
 
   const handleHeightChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const newHeight = parseInt(e.target.value);
-    setHeight(newHeight);
+      setHeight(newHeight);
   }; 
 
   const handleDownload = (): void => {
@@ -107,6 +111,7 @@ function Resizer(): JSX.Element {
     img.src = URL.createObjectURL(image);
   };
 
+  
   const { getRootProps, getInputProps } = useDropzone({
     accept: "image/*",
     onDrop: (acceptedFiles: File[]) => {
@@ -156,7 +161,8 @@ function Resizer(): JSX.Element {
       </Button>      
       </ButtonContainer>       
     </Container>
-  )) || <HeroImage title={"Resize images"} subtitle={"by yourself"} buttonText={"Hola"}/>  
+  )) 
+    ||<HeroImage title={"Resize images"} subtitle={"#ByYourself"} buttonText={" Log in to keep going!"}/>  
   );
 }
 

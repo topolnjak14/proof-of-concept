@@ -13,13 +13,14 @@ const Body = styled.body`
   box-sizing: border-box;
 ;
 `;
+
  const Container = styled.div`
   width: 100%;
   height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 5em;
+  padding-top: 2em;
 
 ;
 `; 
@@ -42,7 +43,7 @@ function App() {
       </NavContainer>
       <Container>
           <Resizer/>  
-          {/* <Footer/> */}
+          <Footer/>
       </Container>
     </Body>
   )
