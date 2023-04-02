@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
             <NavBar/>
-            <HeroImage title={'Hola'} subtitle={'Hola'} buttonText={'Hola'}/>
+            {/* <HeroImage title={'Hola'} subtitle={'Hola'} buttonText={'Hola'}/> */}
             <Resizer/>  
     </div>
   )

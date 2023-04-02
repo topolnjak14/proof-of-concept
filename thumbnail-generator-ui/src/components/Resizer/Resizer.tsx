@@ -6,6 +6,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import styled from 'styled-components';
 import LogoutButton from "../Login/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
+import HeroImage from "../Home/HeroImage";
 
 
 const Container = styled.div`
@@ -141,7 +142,7 @@ function Resizer(): JSX.Element {
       <LogoutButton/>
       
     </Container>
-  )) || <h2>Error: Debes logiarte para ingresar a este sitio</h2>   
+  )) || <HeroImage title={"Hola"} subtitle={"Hola"} buttonText={"Hola"}/>  
   );
 }
 

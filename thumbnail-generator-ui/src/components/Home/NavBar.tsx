@@ -1,7 +1,8 @@
 import React from 'react';
+import { useAuth0 } from "@auth0/auth0-react";
 import styled from 'styled-components';
 import LoginButton from '../Login/LoginButton';
-import { Link } from "react-router-dom";
+import LogoutButton from '../Login/LogoutButton';
 
 const Nav = styled.nav`
   display: flex;
@@ -36,16 +37,17 @@ const NavMenuLink = styled.a`
 `;
 
 const Navbar = () => {
+    const { isAuthenticated } = useAuth0();
   return (
     <Nav>
       <Logo href="/">ThumBox</Logo>
       <NavMenu>
-      
-              <LoginButton />
-      
+      {isAuthenticated ? <LogoutButton /> : <LoginButton />}
       </NavMenu>
     </Nav>
   );
 };
 
 export default Navbar;
+      
+      
