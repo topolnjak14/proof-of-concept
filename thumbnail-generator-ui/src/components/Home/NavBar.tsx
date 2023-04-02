@@ -1,16 +1,19 @@
 import React from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import styled from 'styled-components';
+import CircularProgress from '@mui/material/CircularProgress';
 import LoginButton from '../Login/LoginButton';
 import LogoutButton from '../Login/LogoutButton';
 
 const Nav = styled.nav`
+  width: 90%;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #333;
   color: #fff;
-  padding: 10px 20px;
+  padding: 20px;
 `;
 
 const Logo = styled.a`
@@ -37,7 +40,10 @@ const NavMenuLink = styled.a`
 `;
 
 const Navbar = () => {
-    const { isAuthenticated } = useAuth0();
+    const { isAuthenticated, isLoading } = useAuth0();
+
+    if(isLoading) return <CircularProgress/>
+
   return (
     <Nav>
       <Logo href="/">ThumBox</Logo>

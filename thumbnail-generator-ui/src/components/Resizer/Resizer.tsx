@@ -4,14 +4,13 @@ import "../Resizer/drop.css";
 import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import styled from 'styled-components';
-import LogoutButton from "../Login/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
 import HeroImage from "../Home/HeroImage";
 
 
 const Container = styled.div`
   width: 60%;
-  height: 60vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,26 +20,41 @@ const Container = styled.div`
   color: white;
   padding-top: 20px;
   
+  
   `;
 
 const DragContainer = styled.div`
-  width: 60%;
-  height: 60vh;
+  width: 80%;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(45deg, #FF8C00, #FFA500);
-  border-radius: 10px;
+  border-radius: 5px;
   color: #3b3731;
   border: 2px solid gray;
   font-size: 1.5em;
   font-weight: bold;
   text-align: center;
-  margin-top: 20px;
-  margin-left: 0;
-  margin-right: 0;
+  padding: 20px;
+  ;
   `;
 
+  const Label = styled.label`
+  color: #3b3731; 
+;
+`;
+
+  const Input = styled.input`
+  border: none;
+  border-radius: 5px;
+;
+`;
+
+  const ButtonContainer = styled.div`
+  padding: 5px;
+;
+`;
   
 
 function Resizer(): JSX.Element {
@@ -119,8 +133,8 @@ function Resizer(): JSX.Element {
       </DragContainer> 
        
        <div>
-        <label htmlFor="width">Width:</label>
-        <input
+        <Label htmlFor="width">Width:</Label>
+        <Input
           type="number"
           id="width"
           value={width}
@@ -128,21 +142,21 @@ function Resizer(): JSX.Element {
         />
       </div>
       <div>
-        <label htmlFor="height">Height:</label>
-        <input
+        <Label htmlFor="height">Height:</Label>
+        <Input
           type="number"
           id="height"
           value={height}
           onChange={handleHeightChange}
         />
-      </div>       
+      </div>
+      <ButtonContainer>
       <Button variant="contained" onClick={handleDownload} disabled={!image}>
         Download
-      </Button>
-      <LogoutButton/>
-      
+      </Button>      
+      </ButtonContainer>       
     </Container>
-  )) || <HeroImage title={"Hola"} subtitle={"Hola"} buttonText={"Hola"}/>  
+  )) || <HeroImage title={"Resize images"} subtitle={"by yourself"} buttonText={"Hola"}/>  
   );
 }
 

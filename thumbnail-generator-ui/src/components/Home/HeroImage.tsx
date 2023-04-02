@@ -1,29 +1,49 @@
 import React from 'react';
 import styled from 'styled-components';
+import backgroundImg from "../../assets/Banner.jpg";
+import '@fontsource/roboto/300.css';
 
 const CardContainer = styled.div`
-  width: 100%;
+  width: 70%;
   height: 60vh;
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, #FF8C00, #FFA500);
-  border-radius: 10px;
+  background-image: url(${backgroundImg});
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
   color: white;
   margin-top: 20px;
-  margin-left: 0;
-  margin-right: 0;
 
-  
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: #00000060;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 5px;  
+  }
 `;
 
-const CardTitle = styled.h2`
-  font-size: 24px;
+const Content = styled.div`
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index:1
+`;
+const CardTitle = styled.h1`
+  font-size: 2em;
   margin-bottom: 10px;
 `;
 
 const CardSubtitle = styled.p`
-  font-size: 18px;
+  font-size: 1.5em;
   margin-bottom: 20px;
 `;
 
@@ -33,7 +53,7 @@ const CardButton = styled.button`
   color: #FF8C00;
   font-size: 18px;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
 `;
 
@@ -46,11 +66,14 @@ interface CardProps {
 const HeroImage: React.FC<CardProps> = ({ title, subtitle, buttonText }) => {
   return (
     <CardContainer>
-      <CardTitle>{title}</CardTitle>
-      <CardSubtitle>{subtitle}</CardSubtitle>
-      <CardButton>{buttonText}</CardButton>
+      <Content>
+        <CardTitle>{title}</CardTitle>
+        <CardSubtitle>{subtitle}</CardSubtitle>
+        <CardButton>{buttonText}</CardButton>
+      </Content>
     </CardContainer>
   );
 };
 
 export default HeroImage;
+
