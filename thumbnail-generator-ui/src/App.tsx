@@ -1,16 +1,19 @@
-import Button from '@mui/material/Button';
 import './App.css'
-import ThumbnailGenerator from './Desechos/Thumbnail';
-import ThumbnailDrop from "./Desechos/ThumbnailDrop";
-import Resizer from './components/Resizer/Resizer';
+import Resizer from './components/Resizer/Resizer'; 
+import NavBar from './components/Home/NavBar';
+import HeroImage from './components/Home/HeroImage';
 
 function App() {
 
   return (
     <div>
-      <Resizer/>
+            <NavBar/>
+            <HeroImage title={'Hola'} subtitle={'Hola'} buttonText={'Hola'}/>
+            <Resizer/>  
     </div>
   )
 }
 
 export default App
+
+      

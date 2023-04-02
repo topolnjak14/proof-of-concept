@@ -2,19 +2,55 @@ import React, { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import "../Resizer/drop.css";
 import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
 import CircularProgress from '@mui/material/CircularProgress';
-import { StyledComponent } from "styled-components";
-import HandleImageChange from "..//HandleChange/HandleImageChange";
+import styled from 'styled-components';
+import LogoutButton from "../Login/LogoutButton";
+import { useAuth0 } from "@auth0/auth0-react";
+
+
+const Container = styled.div`
+  width: 60%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(45deg, #FF8C00, #FFA500);
+  border-radius: 10px;
+  color: white;
+  padding-top: 20px;
+  
+  `;
+
+const DragContainer = styled.div`
+  width: 60%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #FF8C00, #FFA500);
+  border-radius: 10px;
+  color: #3b3731;
+  border: 2px solid gray;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 0;
+  margin-right: 0;
+  `;
+
+  
 
 function Resizer(): JSX.Element {
-  const [image, setImage] = useState<File | null>(null);
-  const [width, setWidth] = useState<number>(200);
-  const [height, setHeight] = useState<number>(200);
+  const { isAuthenticated } = useAuth0();
+  const [image, setImage] = useState <File | null>(null);
+  const [width, setWidth] = useState <number>(200);
+  const [height, setHeight] = useState <number>(200);
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  debugger;
+
 
   const handleImageChange = async (selectedImage: File): Promise<void> => {
     setIsLoading(true);
@@ -63,13 +99,15 @@ function Resizer(): JSX.Element {
     },
   });
 
-  return (
-    <Container maxWidth="sm">
-     <div>
-       <div
+
+
+  return ( 
+    (isAuthenticated && (  
+     <Container>
+       <DragContainer
         {...getRootProps()}
-        className={`dropzone ${previewImage ? "active" : ""}`}
-      >
+        className={`dropzone ${previewImage ? "active" : ""}`}>
+      
         <input {...getInputProps()} />
         {previewImage ? (
           <img src={previewImage} alt="Preview" />
@@ -77,10 +115,8 @@ function Resizer(): JSX.Element {
           <p>Drag 'n' drop an image here, or click to select an image</p>
         )}
         {isLoading && <CircularProgress />}
-      </div>  
-
-       {/* <HandleImageChange/> */}
-
+      </DragContainer> 
+       
        <div>
         <label htmlFor="width">Width:</label>
         <input
@@ -102,9 +138,10 @@ function Resizer(): JSX.Element {
       <Button variant="contained" onClick={handleDownload} disabled={!image}>
         Download
       </Button>
+      <LogoutButton/>
       
-    </div>
     </Container>
+  )) || <h2>Error: Debes logiarte para ingresar a este sitio</h2>   
   );
 }
 
