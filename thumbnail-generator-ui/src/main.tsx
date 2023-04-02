@@ -4,7 +4,6 @@ import App from "./App";
 import { Auth0Provider } from "@auth0/auth0-react";
 
 
-
 ReactDOM.render(
   <Auth0Provider
     domain="dev-pg5bsczdumvjfub3.us.auth0.com"

@@ -42,8 +42,8 @@ function App() {
       </NavContainer>
       <Container>
           <Resizer/>  
+          {/* <Footer/> */}
       </Container>
-          <Footer/>
     </Body>
   )
 }

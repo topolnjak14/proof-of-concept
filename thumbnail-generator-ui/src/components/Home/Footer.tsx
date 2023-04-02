@@ -11,8 +11,6 @@ const FooterContainer = styled.footer`
   align-items: center;
   color: black;
   padding-top: 10px;
-
-;
 `;
 
 function Footer() {

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import CircularProgress from '@mui/material/CircularProgress';
 import LoginButton from '../Login/LoginButton';
 import LogoutButton from '../Login/LogoutButton';
+import Profile from '../Login/Profile';
 
 const Nav = styled.nav`
   width: 90%;
@@ -47,6 +48,7 @@ const Navbar = () => {
   return (
     <Nav>
       <Logo href="/">ThumBox</Logo>
+      <Profile/>
       <NavMenu>
       {isAuthenticated ? <LogoutButton /> : <LoginButton />}
       </NavMenu>
