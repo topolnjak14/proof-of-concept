@@ -1,8 +1,9 @@
 import './App.css'
+import styled from 'styled-components';
 import Resizer from './components/Resizer/Resizer'; 
 import NavBar from './components/Home/NavBar';
-import styled from 'styled-components';
-/* import Container from '@mui/material/Container'; */
+import Footer from './components/Home/Footer';
+
 
 
 const Body = styled.body`
@@ -42,6 +43,7 @@ function App() {
       <Container>
           <Resizer/>  
       </Container>
+          <Footer/>
     </Body>
   )
 }
